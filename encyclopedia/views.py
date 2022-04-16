@@ -28,12 +28,11 @@ def index(request):
                 if query.lower() in title.lower():
                     res.append(title)
                 
-                if res!=[]:
-                    
-                    return render(request,"encyclopedia/search.html",{
-                        'results':res,
-                        'query':query,
-                        "form":SearchForm()
+            if res!=[]:
+                return render(request,"encyclopedia/search.html",{
+                    'results':res,
+                    'query':query,
+                    "form":SearchForm()
                     })
             else:
                 return render(request,"encyclopedia/index.html",{
